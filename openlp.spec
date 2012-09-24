@@ -13,7 +13,7 @@ BuildArch:	noarch
 BuildRequires:	desktop-file-utils
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
-BuildRequires:	qt5-devel
+BuildRequires:	qt4-devel
 Requires:	PyQt4
 Requires:	phonon-gstreamer
 Requires:	python-beautifulsoup
