@@ -57,7 +57,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/openlp.desktop
 mv %{buildroot}%{_bindir}/openlp.pyw %{buildroot}%{_bindir}/openlp
 
 mkdir -p %{buildroot}%{_datadir}/openlp/i18n/
-mv resources/i18n/*.qm %{buildroot}%{_datadir}/openlp/i18n
+for TSFILE in resources/i18n/*.ts; do
+    lrelease $TSFILE -qm %{buildroot}%{_datadir}/openlp/i18n/`basename $TSFILE .ts`.qm;
+done
 mkdir -p %{buildroot}%{_datadir}/mime/packages
 cp -p resources/openlp.xml %{buildroot}%{_datadir}/mime/packages
 install -m644 documentation/%{name}.1 -D %{buildroot}%{_mandir}/man1/%{name}.1
