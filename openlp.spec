@@ -57,9 +57,7 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/openlp.desktop
 mv %{buildroot}%{_bindir}/openlp.pyw %{buildroot}%{_bindir}/openlp
 
 mkdir -p %{buildroot}%{_datadir}/openlp/i18n/
-for TSFILE in resources/i18n/*.ts; do
-    lrelease $TSFILE -qm %{buildroot}%{_datadir}/openlp/i18n/`basename $TSFILE .ts`.qm;
-done
+mv resources/i18n/*.qm %{buildroot}%{_datadir}/openlp/i18n
 mkdir -p %{buildroot}%{_datadir}/mime/packages
 cp -p resources/openlp.xml %{buildroot}%{_datadir}/mime/packages
 install -m644 documentation/%{name}.1 -D %{buildroot}%{_mandir}/man1/%{name}.1
@@ -68,14 +66,12 @@ install -m644 documentation/%{name}.1 -D %{buildroot}%{_mandir}/man1/%{name}.1
 rm -rf %{buildroot}
 
 %files
-%doc copyright.txt
+%defattr(-,root,root)
+%doc copyright.txt LICENSE
 %{_bindir}/openlp
 %{_datadir}/mime/packages/openlp.xml
 %{_datadir}/applications/openlp.desktop
 %{_datadir}/icons/hicolor/*/apps/openlp.*
 %{_datadir}/openlp
 %{python_sitelib}/openlp/
-%exclude %{python_sitelib}/resources/
 %{python_sitelib}/OpenLP-%{version}*.egg-info
-%{_mandir}/man1/%{name}.1*
-
