@@ -2,10 +2,10 @@
 
 Summary:	Open source Church presentation and lyrics projection application
 Name:		openlp
-Version:	1.9.12
+Version:	2.0.5
 Release:	%mkrel 1
-URL:		http://openlp.org/
-Source0:	http://downloads.sourceforge.net/%{name}/%{version}/%{oname}-%{version}.tar.gz
+URL:		http://openlp.org/en/
+Source0:	http://downloads.sourceforge.net/%{name}/%{oname}-%{version}.tar.gz
 License:	GPLv2
 Group:		Publishing
 BuildArch:	noarch
@@ -14,8 +14,10 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
 BuildRequires:	qt4-devel
+Requires:	vlc
 Requires:	PyQt4
-Requires:	phonon-gstreamer
+Requires:	python-qt4-phonon
+Requires:	phonon-backend
 Requires:	python-beautifulsoup
 Requires:	python-chardet
 Requires:	python-lxml
@@ -73,7 +75,7 @@ rm -rf %{buildroot}
 %{_datadir}/icons/hicolor/*/apps/openlp.*
 %{_datadir}/openlp
 %{python_sitelib}/openlp/
+%exclude %{python_sitelib}/resources/
 %{python_sitelib}/OpenLP-%{version}*.egg-info
 %{_mandir}/man1/%{name}.1*
-
 
