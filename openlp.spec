@@ -65,8 +65,6 @@ done
 mkdir -p %{buildroot}%{_datadir}/mime/packages
 cp -p resources/openlp.xml %{buildroot}%{_datadir}/mime/packages
 
-# Deduplicate .pyc and .pyo files
-%fdupes %{buildroot}%{python_sitelib}
 
 %post
 touch --no-create %{_datadir}/icons/hicolor ||:
