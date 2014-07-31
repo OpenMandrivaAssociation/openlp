@@ -74,5 +74,6 @@ rm -rf %{buildroot}
 %{_datadir}/icons/hicolor/*/apps/openlp.*
 %{_datadir}/openlp
 %{python_sitelib}/openlp/
+%{python_sitelib}/resources/
 %{python_sitelib}/OpenLP-%{version}*.egg-info
 %{_mandir}/man1/%{name}.1*
