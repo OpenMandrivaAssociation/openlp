@@ -3,7 +3,7 @@
 Summary:	Open source Church presentation and lyrics projection application
 Name:		openlp
 Version:	2.0.5
-Release:	1
+Release:	2
 URL:		http://openlp.org/en/
 Source0:	http://downloads.sourceforge.net/%{name}/%{oname}-%{version}.tar.gz
 License:	GPLv2
